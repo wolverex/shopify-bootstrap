@@ -1,0 +1,28 @@
+{
+  "name": "shopify-bootstrap",
+  "version": "3.1.1",
+  "description": "A non-opinionated bare theme for Shopify complete with Bootstrap and push-to-Shopify workflow",
+  "keywords": "Shopify, Bootstrap",
+  "license": "GPL-2.0",
+  "author": "Nicholas Lim <nicholas@uneekly.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wolverex/shopify-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wolverex/shopify-bootstrap/issues"
+  },
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-sass": "~0.7.1",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-concat": "~0.3.0"
+  }
+}
