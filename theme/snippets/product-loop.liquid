@@ -1,6 +1,6 @@
 {% capture collection_handle %}{{ product-loop | handleize }}{% endcapture %}
 {% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
-<div class="product span4">
+<div class="product col-sm-4">
   
   {% if product.price_min < product.compare_at_price_min %}
     <span class="circle sale">Sale</span>

@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         eqnull: true,
         boss: true,
         sub: true,
+        smarttabs: true,
         globals: {
           document: true,
           window: true,
@@ -41,20 +42,31 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'theme/assets/bootstrapify-option-selection.min.js': ['dist/js/bootstrapify-option-selection.js'],
+          'theme/assets/scripts.min.js': ['dist/js/scripts.js'],
         }
       }
     },
     concat: {
       dist: {
-        src: ['bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/*.js'],
+        src: ['bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/button.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/collapse.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/dropdown.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/tab.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/scrollspy.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/modal.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/tooltip.js',
+        'bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/popover.js'],
         dest: 'theme/assets/bootstrap.js',
       },
     },
     sass: {
       dist: {
         files: {
-          'theme/assets/_base.css': 'dist/scss/*.scss',
+          'theme/assets/style.css.liquid': 'dist/scss/*.scss',
         }
       }
     },
@@ -81,7 +93,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:assets']
       },
       uglify: {
-        files: 'dist/js/bootstrapify-option-selection.js',
+        files: 'dist/js/scripts.js',
         tasks: ['uglify']
       },
       concat: {
