@@ -103,21 +103,9 @@
     <div class="container">
       <section id="content" class="clearfix">
           {% if template == "list-collections" %}
-          <div id="collection" class="row">
-            <div class="col-xs-12">
-              <h1><span>Product Collections</span></h1>
-            </div> <!-- /.col-xs-12 -->
-          </div> <!-- /.row -->
-          
-          <div class="row products masonry">
-            {% for collection in collections %}
-            {% unless collection.all_products_count == 0 or collection.handle == "frontpage" %}
-            {% include 'collection-loop' %}
-            {% endunless %}
-            {% endfor %}
-          </div> <!-- /#collection.row -->
+            {% include 'list-collections' %}
           {% else %}
-          {{ content_for_layout }}
+            {{ content_for_layout }}
           {% endif %}
       </section>
       <!-- End content-->
@@ -190,7 +178,6 @@
         
         <!-- Begin copyright -->
         <div class="col-xs-12 tc copyright">
-          <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name }} | {{ powered_by_link }}</p>
           <ul class="credit-cards clearfix">
             {% if settings.accept_visa %}<li><img src="{{ 'icon-cc-visa.gif' | asset_url }}" alt="Visa" /></li>{% endif %}
             {% if settings.accept_mastercard %}<li><img src="{{ 'icon-cc-mastercard.gif' | asset_url }}" alt="MasterCard" /></li>{% endif %}
