@@ -5,27 +5,25 @@
   <div class="row clearfix">
     
     <!-- Begin breadcrumb -->
-    <div class="span12">
-      <div class="breadcrumb clearfix">
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <div class="col-xs-12">
+      <ol class="breadcrumb">
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
           <a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a>
-        </span> 
-        <span class="arrow-space">&#62;</span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        </li> 
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
           {% if collection %}
             <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="url"><span itemprop="title">{{ collection.title }}<span></a>
           {% else %}
             <a href="/collections/all" title="All Products" itemprop="url"><span itemprop="title">Products</span></a>
           {% endif %}
-        </span>
-        <span class="arrow-space">&#62;</span>
-        <strong>{{ product.title }}</strong>
-      </div>
+        </li>
+        <li class="active"><strong>{{ product.title }}</strong></li>
+      </ol>
     </div>
     <!-- End breadcrumb -->
 
     <!-- Begin product photos -->
-    <div class="span6">
+    <div class="col-sm-6">
       
       <!-- Begin featured image -->
       <div class="image featured">
@@ -46,13 +44,13 @@
       <div class="thumbs clearfix" style="margin-left:-15px;">
         {% for image in product.images %}
         {% if settings.enable_product_image_zoom %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
+        <div class="image col-sm-2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
           <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
             <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
           </a>
         </div>
         {% else %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
+        <div class="image col-sm-2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
           <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
             <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
           </a>
@@ -71,7 +69,7 @@
     <!-- End product photos -->
     
     <!-- Begin description -->
-    <div class="span6">
+    <div class="col-sm-6">
       
       <h1 class="title" itemprop="name">{{ product.title }}</h1>
       
@@ -142,7 +140,7 @@
     <!-- End description -->
 
     <!-- Begin reviews -->
-	  <div class="span12">
+	  <div class="col-xs-12">
       <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
     </div>
     <!-- End reviews -->

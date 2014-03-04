@@ -3,25 +3,21 @@
   {% paginate collection.products by settings.pagination_limit %}
   <!-- Begin collection info -->
   <div class="row">
-    <div class="span12">
+    <div class="col-xs-12">
       
       <!-- Begin breadcrumb -->
-      <div class="breadcrumb clearfix">
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
-        <span class="arrow-space">&#62;</span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="url"><span itemprop="title">{{ collection.title }}</span></a></span>       
-        
+      <ol class="breadcrumb">
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></li> 
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="url"><span itemprop="title">{{ collection.title }}</span></a></li>            
         {% if current_tags %}
           {% for tag in current_tags %}
-            <span class="arrow-space">&#62;</span>
-            <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="url"><span itemprop="title">{{ tag }}</span></a></span>       
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="url"><span itemprop="title">{{ tag }}</span></a></li>       
           {% endfor %}
-        {% endif %}
-        
+        {% endif %}  
         {% if paginate.pages != 0 %}      
-          <span class="arrow-space">&#62;</span> <strong>Page {{ paginate.current_page }} of {{ paginate.pages }}</strong>
+          <li class="active"><strong>Page {{ paginate.current_page }} of {{ paginate.pages }}</strong></li>
         {% endif %}
-      </div>
+      </ol>
       <!-- End breadcrumb -->
 
       <!-- Begin sort collection -->
@@ -57,7 +53,7 @@
   <!-- Begin no products -->
   {% if collection.products.size == 0 %}
   <div class="row">
-    <div class="span12 expanded-message">
+    <div class="col-xs-12 expanded-message">
       <p>No products found</p>
     </div>
   </div>

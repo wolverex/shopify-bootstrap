@@ -6,6 +6,11 @@ $line-height-base: 1.42858; // fix rounding issue as sass var can only hold 5 de
 html,body { background-color: #{'{{ settings.shop_bg_color }}'}; }
 body { color: #{'{{ settings.body_font_color }}'}; font-family: #{"{{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}"}; }
 
+img {
+  max-width: 100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
 
 /* 1.4 - Typography */
 h1,h2,h3,h4,h5,h6 { color:#{'{{ settings.header_color }}'}; margin:0 0 13px 0; font-family:#{"{{ settings.header_font | remove: 'Google+' | replace: '+', ' ' }}"}; }

@@ -4380,6 +4380,11 @@ body {
   color: {{ settings.body_font_color }};
   font-family: {{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}; }
 
+img {
+  max-width: 100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
 /* 1.4 - Typography */
 h1, h2, h3, h4, h5, h6 {
   color: {{ settings.header_color }};
