@@ -1,7 +1,7 @@
 <div id="blog">
   
   <div class="row title">
-    <div class="span12">
+    <div class="col-xs-12">
       <h1>{{ blog.title }}</h1>
     </div> 
   </div> 
@@ -11,7 +11,7 @@
     
     {% paginate blog.articles by 10 %}
     
-    <div class="span9 articles">
+    <div class="col-sm-9 articles">
       {% for article in blog.articles %}
       <div class="article clearfix">
         <h1><a href="{{ article.url }}">{{ article.title }}</a> <span class="date" style="display: block;">{{ article.published_at | date: "%B %d %Y" }}{% if article.comments_enabled? %}, <span>{{ article.comments_count }} {{ article.comments_count | pluralize: "Comment", "Comments" }}</span>{% endif %}</span></h1>

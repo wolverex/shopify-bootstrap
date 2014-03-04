@@ -34,8 +34,7 @@
     {% assign featuredproduct = collections[settings.frontpage_collection].products.first %}
 
      {% if settings.enable_featuredproduct == true and featuredproduct.handle != blank  %}
-      <div class="display-table featured-product col-xs-12 p30 border-bottom">
-        <div class="p30">
+      <div class="display-table featured-product col-xs-12">
           <div class="display-table-cell">
             <h2>{{ featuredproduct.title }}</h2>
             <span class="price">
@@ -62,7 +61,6 @@
             {% else %}
             {% endif %}
           </div>
-        </div><!-- p30 -->
       </div><!-- displaytable -->
     {% endif %}
 
@@ -102,12 +100,10 @@
 <!-- end featured product -->
 
 <!-- start content page -->
-<div class="span12 clearfix {% if helper_welcome %}helper-section{% endif %}">
-  <div class="p30 clearfix  {% if helper_welcome %}helper-content{% endif %}">
+<div class="col-xs-12">
     <div class="intro clearfix">
       <h2>{{ pages[settings.homepage].title }}</h2>
       {{ pages[settings.homepage].content }}
     </div>
-  </div>
 </div>
 <!-- end content page -->
